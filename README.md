@@ -1,7 +1,6 @@
 # Fractions-Lib-CPP
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![C++ Standard](https://img.shields.io/badge/C++-17+-blue.svg)](https://en.cppreference.com/w/cpp/compiler_support)
 
 A C++ library for working with fractions. Supports basic arithmetic operations, fraction simplification, and conversion to various formats.
 
@@ -25,4 +24,4 @@ A C++ library for working with fractions. Supports basic arithmetic operations, 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Fractions-Lib-CPP.git
+https://github.com/Pilm404/Fractions-Lib-CPP.git
