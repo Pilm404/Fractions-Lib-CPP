@@ -7,8 +7,13 @@ namespace Fraction
 		std::cout << numerator << "/" << denominator << std::endl;
 	}
 
-	void fraction::SetValues(double n, double d)
+	void fraction::SetValues(double n, double d = 1)
 	{
+		if (n == 0 || d == 0)
+		{
+			return;
+		}
+
 		numerator = n;
 		denominator = d;
 	}
