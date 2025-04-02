@@ -15,6 +15,7 @@ namespace Fraction
 
 		void PrintFraction();
 		void SetValues(double, double);
+		double GetAnswer();
 		void Coup();
 		void Simplify();
 	};

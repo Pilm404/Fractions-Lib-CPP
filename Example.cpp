@@ -30,10 +30,14 @@ int main()
 	Fraction::Math::Minus(f1, f2).PrintFraction();
 	Fraction::Math::Multiply(f1, f2).PrintFraction();
 	Fraction::Math::Divide(f1, f2).PrintFraction();
+	Fraction::Math::Degree(f1, 2).PrintFraction();
 
 	//Equalize the denominators
-	EqualizeTheDenominators(f3, f2);
+	Fraction::EqualizeTheDenominators(f3, f2);
 	std::cout << "Equalize the denominators test:\n";
 	f3.PrintFraction();
 	f2.PrintFraction();
+
+	//Answer for fraction
+	std::cout << "Fraction result: " << f3.GetAnswer() << std::endl;
 }

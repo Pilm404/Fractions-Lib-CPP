@@ -9,13 +9,23 @@ namespace Fraction
 
 	void fraction::SetValues(double n, double d = 1)
 	{
-		if (n == 0 || d == 0)
+		if (d == 0)
 		{
 			return;
 		}
 
 		numerator = n;
 		denominator = d;
+	}
+	
+	double fraction::GetAnswer()
+	{
+		if (denominator == 0)
+		{
+			return 0;
+		}
+
+		return numerator / denominator;
 	}
 
 	void fraction::Coup()
