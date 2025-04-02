@@ -30,7 +30,6 @@ int main()
 	Fraction::Math::Minus(f1, f2).PrintFraction();
 	Fraction::Math::Multiply(f1, f2).PrintFraction();
 	Fraction::Math::Divide(f1, f2).PrintFraction();
-	Fraction::Math::Degree(f1, 2).PrintFraction();
 
 	//Equalize the denominators
 	Fraction::EqualizeTheDenominators(f3, f2);
