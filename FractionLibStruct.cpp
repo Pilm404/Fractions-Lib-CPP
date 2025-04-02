@@ -21,7 +21,7 @@ namespace Fraction
 	}
 
 	void fraction::Simplify() {
-		int divisor = GCD(abs(numerator), abs(denominator));
+		double divisor = GCD(abs(numerator), abs(denominator));
 		numerator /= divisor;
 		denominator /= divisor;
 		if (denominator < 0) {

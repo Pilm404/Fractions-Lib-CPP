@@ -2,63 +2,34 @@
 
 namespace Fraction
 {
-	int GCD(int a, int b) {
+	double GCD(double a, double b) {
 		while (b) {
-			a %= b;
+			a = std::fmod(a, b);
 			std::swap(a, b);
 		}
 		return a;
 	}
 
-	fraction EqualizeTheDenominators(fraction fr_arr[2])
+	void CopyValues(fraction a, fraction& b)
 	{
-		fr_arr[0].Simplify();
-		fr_arr[1].Simplify();
+		b.denominator = a.denominator;
+		b.numerator = a.numerator;
 	}
 
-	fraction Sum(fraction a, fraction b)
+	void EqualizeTheDenominators(fraction& a, fraction& b)
 	{
-		fraction res;
-
+		a.Simplify();
+		b.Simplify();
+		
 		if (a.denominator != b.denominator)
 		{
-
+			double general_denumerator = a.denominator * b.denominator;
+			fraction temp;
+			CopyValues(a, temp);
+			a.denominator = general_denumerator;
+			a.numerator *= b.denominator;
+			b.denominator = general_denumerator;
+			b.numerator *= temp.denominator;
 		}
-
-		res.denominator = a.denominator;
-		res.numerator = a.numerator + b.numerator;
-		return res;
-	}
-
-	fraction Minus(fraction a, fraction b)
-	{
-		fraction res;
-
-		if (a.denominator != b.denominator)
-		{
-
-		}
-
-		res.denominator = a.denominator;
-		res.numerator = a.numerator - b.numerator;
-		return res;
-	}
-
-	fraction Multiply(fraction a, fraction b)
-	{
-		fraction res;
-		res.denominator = a.denominator * b.denominator;
-		res.numerator = a.numerator * b.numerator;
-		return res;
-	}
-
-	fraction Divide(fraction a, fraction b)
-	{
-		fraction res;
-		b.Coup();
-		res.denominator = a.denominator * b.denominator;
-		res.numerator = a.numerator * b.numerator;
-		b.Coup();
-		return res;
 	}
 }

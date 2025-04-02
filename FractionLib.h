@@ -1,11 +1,12 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 
 namespace Fraction
 {
-	int GCD(int, int);
+	double GCD(double, double);
 
 	struct fraction
 	{
@@ -18,10 +19,14 @@ namespace Fraction
 		void Simplify();
 	};
 
-	fraction EqualizeTheDenominators(fraction[2]);
+	void CopyValues(fraction, fraction&);
+	void EqualizeTheDenominators(fraction&, fraction&);
 
-	fraction Sum(fraction, fraction);
-	fraction Minus(fraction, fraction);
-	fraction Multiply(fraction, fraction);
-	fraction Divide(fraction, fraction);
+	namespace Math
+	{
+		fraction Sum(fraction, fraction);
+		fraction Minus(fraction, fraction);
+		fraction Multiply(fraction, fraction);
+		fraction Divide(fraction, fraction);
+	}
 }
