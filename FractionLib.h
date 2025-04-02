@@ -18,6 +18,8 @@ namespace Fraction
 		void Simplify();
 	};
 
+	fraction EqualizeTheDenominators(fraction[2]);
+
 	fraction Sum(fraction, fraction);
 	fraction Minus(fraction, fraction);
 	fraction Multiply(fraction, fraction);
