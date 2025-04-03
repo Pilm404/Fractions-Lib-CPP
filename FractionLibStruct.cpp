@@ -2,9 +2,39 @@
 
 namespace Fraction
 {
-	void fraction::PrintFraction()
+	void fraction::PrintFraction(FRACTIONPARTS parts = Fraction::ALL)
 	{
-		std::cout << numerator << "/" << denominator << std::endl;
+		switch (parts)
+		{
+		case Fraction::NUMERATOR:
+			std::cout << numerator << std::endl;
+			break;
+		case Fraction::DENOMINATOR:
+			std::cout << denominator << std::endl;
+			break;
+		case Fraction::ALL:
+			std::cout << numerator << "/" << denominator << std::endl;
+			break;
+		default:
+			break;
+		}
+		return;
+	}
+
+	double fraction::GetFraction(FRACTIONPARTS parts)
+	{
+		switch (parts)
+		{
+		case Fraction::NUMERATOR:
+			return numerator;
+			break;
+		case Fraction::DENOMINATOR:
+			return denominator;
+			break;
+		default:
+			break;
+		}
+		return 0;
 	}
 
 	void fraction::SetValues(double n, double d = 1)

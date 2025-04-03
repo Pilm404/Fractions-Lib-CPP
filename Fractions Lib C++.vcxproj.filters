@@ -32,6 +32,9 @@
     <ClCompile Include="FractionLibFunctionsForMath.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="FractionLibFunctionsForComparison.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
