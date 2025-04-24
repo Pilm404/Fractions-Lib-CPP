@@ -37,7 +37,7 @@ namespace Fraction
 		return 0;
 	}
 
-	void fraction::SetValues(double n, double d = 1)
+	void fraction::SetValues(double n, double d)
 	{
 		if (d == 0)
 		{

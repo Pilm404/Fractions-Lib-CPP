@@ -23,7 +23,7 @@
     <ClCompile Include="FractionLibFunctions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="FractionLibStruct.cpp">
+    <ClCompile Include="FractionLibClass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Example.cpp">

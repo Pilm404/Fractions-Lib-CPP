@@ -12,8 +12,7 @@ namespace Fraction
 
 	void CopyValues(fraction a, fraction& b)
 	{
-		b.denominator = a.denominator;
-		b.numerator = a.numerator;
+		b.SetValues(a.GetFraction(NUMERATOR), a.GetFraction(DENOMINATOR));
 	}
 
 	void EqualizeTheDenominators(fraction& a, fraction& b)
@@ -21,15 +20,16 @@ namespace Fraction
 		a.Simplify();
 		b.Simplify();
 		
-		if (a.denominator != b.denominator)
+		if (a.GetFraction(DENOMINATOR) != b.GetFraction(DENOMINATOR))
 		{
-			double general_denumerator = a.denominator * b.denominator;
+			double general_denumerator = a.GetFraction(DENOMINATOR) * b.GetFraction(DENOMINATOR);
 			fraction temp;
 			CopyValues(a, temp);
-			a.denominator = general_denumerator;
-			a.numerator *= b.denominator;
-			b.denominator = general_denumerator;
-			b.numerator *= temp.denominator;
+			a.SetValues(a.GetFraction(NUMERATOR) * b.GetFraction(DENOMINATOR), general_denumerator);
+			b.SetValues(b.GetFraction(NUMERATOR) * temp.GetFraction(DENOMINATOR), general_denumerator);
 		}
+
+		a.Simplify();
+		b.Simplify();
 	}
 }

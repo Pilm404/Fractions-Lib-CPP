@@ -9,11 +9,11 @@ namespace Fraction
 			a.Simplify();
 			b.Simplify();
 			EqualizeTheDenominators(a, b);
-			if (a.numerator > b.numerator)
+			if (a.GetFraction(NUMERATOR) > b.GetFraction(NUMERATOR))
 			{
 				return GREATER;	
 			}
-			else if (a.numerator < b.numerator)
+			else if (a.GetFraction(NUMERATOR) < b.GetFraction(NUMERATOR))
 			{
 				return LESS;
 			}

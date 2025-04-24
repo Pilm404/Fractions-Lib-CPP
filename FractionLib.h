@@ -22,14 +22,17 @@ namespace Fraction
 
 	double GCD(double, double);
 
-	struct fraction
+	class fraction
 	{
-		double numerator = 1;
-		double denominator = 1;
-
+	private:
+		double numerator;
+		double denominator;
+	public:
+		fraction() : numerator(0), denominator(1) {}
+		fraction(double n, double d) : numerator(n), denominator(d) {}
 		void PrintFraction(FRACTIONPARTS);
 		double GetFraction(FRACTIONPARTS);
-		void SetValues(double, double);
+		void SetValues(double, double d = 1);
 		double GetAnswer();
 		void Coup();
 		void Simplify();
@@ -53,3 +56,11 @@ namespace Fraction
 		fraction Divide(fraction, fraction);
 	}
 }
+
+#ifdef __cplusplus >= 202002L
+	using enum Fraction::FRACTIONPARTS;
+	using enum Fraction::COMPARISONSTATUS;
+#endif
+
+using FRACTIONPARTS = Fraction::FRACTIONPARTS;
+using COMPARISONSTATUS = Fraction::COMPARISONSTATUS;

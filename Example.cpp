@@ -4,10 +4,9 @@
 int main()
 {
 	//Create fraction variable
-	Fraction::fraction f1, f2, f3;
+	Fraction::fraction f1(2, 10), f2, f3;
 	
 	//Set fraction values
-	f1.SetValues(2, 10);
 	f2.SetValues(10, 5);
 
 	//Copy values to new variable
@@ -21,7 +20,7 @@ int main()
 
 	//Print fraction data
 	std::cout << "Printing test:\n";
-	f1.PrintFraction(Fraction::ALL);
+	f1.PrintFraction(ALL);
 	f1.PrintFraction(Fraction::NUMERATOR);
 	f1.PrintFraction(Fraction::DENOMINATOR);
 
@@ -58,8 +57,6 @@ int main()
 
 	//Get fraction parts
 	std::cout << "Numerator: " << f3.GetFraction(Fraction::NUMERATOR) << std::endl;
-	//or
-	std::cout << "Numerator: " << f3.numerator << std::endl;
 
 	//Answer for fraction
 	std::cout << "Fraction result: " << f3.GetAnswer() << std::endl;

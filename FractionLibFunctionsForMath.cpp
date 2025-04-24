@@ -9,13 +9,13 @@ namespace Fraction
 			fraction res;
 			a.Simplify(); b.Simplify();
 
-			if (a.denominator != b.denominator)
+			if (a.GetFraction(DENOMINATOR) != b.GetFraction(DENOMINATOR))
 			{
 				EqualizeTheDenominators(a, b);
 			}
 
-			res.denominator = a.denominator;
-			res.numerator = a.numerator + b.numerator;
+			res.SetValues(a.GetFraction(NUMERATOR) + b.GetFraction(NUMERATOR),
+				a.GetFraction(DENOMINATOR));
 			res.Simplify();
 			return res;
 		}
@@ -25,13 +25,13 @@ namespace Fraction
 			fraction res;
 			a.Simplify(); b.Simplify();
 
-			if (a.denominator != b.denominator)
+			if (a.GetFraction(DENOMINATOR) != b.GetFraction(DENOMINATOR))
 			{
 				EqualizeTheDenominators(a, b);
 			}
 
-			res.denominator = a.denominator;
-			res.numerator = a.numerator - b.numerator;
+			res.SetValues(a.GetFraction(NUMERATOR) - b.GetFraction(NUMERATOR),
+				a.GetFraction(DENOMINATOR));
 			res.Simplify();
 			return res;
 		}
@@ -41,8 +41,9 @@ namespace Fraction
 			fraction res;
 			a.Simplify(); b.Simplify();
 
-			res.denominator = a.denominator * b.denominator;
-			res.numerator = a.numerator * b.numerator;
+			res.SetValues(a.GetFraction(NUMERATOR) * b.GetFraction(NUMERATOR),
+				a.GetFraction(DENOMINATOR) * a.GetFraction(DENOMINATOR));
+
 			res.Simplify();
 			return res;
 		}
@@ -53,8 +54,8 @@ namespace Fraction
 			a.Simplify(); b.Simplify();
 			b.Coup();
 
-			res.denominator = a.denominator * b.denominator;
-			res.numerator = a.numerator * b.numerator;
+			res.SetValues(a.GetFraction(NUMERATOR) * b.GetFraction(NUMERATOR), 
+				a.GetFraction(DENOMINATOR) * a.GetFraction(DENOMINATOR));
 			res.Simplify();
 			return res;
 		}
