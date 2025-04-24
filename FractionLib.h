@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 
+const bool use_namespace_for_enum = true; 
 
 namespace Fraction
 {
@@ -57,10 +58,8 @@ namespace Fraction
 	}
 }
 
-#ifdef __cplusplus >= 202002L
+
+#ifdef __cplusplus >= 202002L && use_namespace_for_enum
 	using enum Fraction::FRACTIONPARTS;
 	using enum Fraction::COMPARISONSTATUS;
 #endif
-
-using FRACTIONPARTS = Fraction::FRACTIONPARTS;
-using COMPARISONSTATUS = Fraction::COMPARISONSTATUS;
