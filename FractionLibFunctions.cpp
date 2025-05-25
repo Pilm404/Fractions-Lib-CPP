@@ -10,12 +10,12 @@ namespace Fraction
 		return a;
 	}
 
-	void CopyValues(fraction a, fraction& b)
+	__standard_template_wd void CopyValues(fraction<T> a, fraction<T>& b)
 	{
 		b.SetValues(a.GetFraction(NUMERATOR), a.GetFraction(DENOMINATOR));
 	}
 
-	void EqualizeTheDenominators(fraction& a, fraction& b)
+	__standard_template_wd void EqualizeTheDenominators(fraction<T>& a, fraction<T>& b)
 	{
 		a.Simplify();
 		b.Simplify();
@@ -31,5 +31,11 @@ namespace Fraction
 
 		a.Simplify();
 		b.Simplify();
+	}
+
+	template<typename NEW_TYPE, typename OLD_TYPE>
+	fraction<NEW_TYPE> TypesConverter(fraction<OLD_TYPE> old_fr)
+	{
+		return fraction<NEW_TYPE>((NEW_TYPE)old_fr.GetFraction(NUMERATOR), (NEW_TYPE)old_fr.GetFraction(DENOMINATOR));
 	}
 }

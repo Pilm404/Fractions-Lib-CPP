@@ -9,14 +9,11 @@ A lightweight C++ header‑only library for exact arithmetic with fractions.
 * Automatic simplification (uses GCD)
 * Full set of operators  
   `+  –  *  /  ==  !=  <  <=  >  >=`
-* Utility helpers: inversion, normalization, `toDouble()`, `toString()`
 * No dynamic allocation, no dependencies
 
 ## 🚀 Quick Start
 
 ### Requirements
-* **C++20 compiler or newer** – the library relies on `using enum`, etc.  
-  Projects compiled with an older standard will fail to build.
 * Recommended toolchains  
   * **Visual Studio 2022 (v17+)**  
   * **GCC 10+**  

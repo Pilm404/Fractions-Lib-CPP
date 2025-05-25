@@ -1,18 +1,20 @@
 #include "FractionLib.h"
 
+
+
 namespace Fraction
 {
-	void fraction::PrintFraction(FRACTIONPARTS parts = Fraction::ALL)
+	__standard_template_wd void fraction<T>::PrintFraction(FRACTIONPARTS parts) const
 	{
 		switch (parts)
 		{
-		case Fraction::NUMERATOR:
+		case NUMERATOR:
 			std::cout << numerator << std::endl;
 			break;
-		case Fraction::DENOMINATOR:
+		case DENOMINATOR:
 			std::cout << denominator << std::endl;
 			break;
-		case Fraction::ALL:
+		case ALL:
 			std::cout << numerator << "/" << denominator << std::endl;
 			break;
 		default:
@@ -20,15 +22,15 @@ namespace Fraction
 		}
 		return;
 	}
-
-	double fraction::GetFraction(FRACTIONPARTS parts)
+	
+	__standard_template_wd T fraction<T>::GetFraction(FRACTIONPARTS parts) const
 	{
 		switch (parts)
 		{
-		case Fraction::NUMERATOR:
+		case NUMERATOR:
 			return numerator;
 			break;
-		case Fraction::DENOMINATOR:
+		case DENOMINATOR:
 			return denominator;
 			break;
 		default:
@@ -37,18 +39,19 @@ namespace Fraction
 		return 0;
 	}
 
-	void fraction::SetValues(double n, double d)
+	__standard_template_wd bool fraction<T>::SetValues(T n, T d)
 	{
 		if (d == 0)
 		{
-			return;
+			return false;
 		}
 
 		numerator = n;
 		denominator = d;
+		return true;
 	}
 	
-	double fraction::GetAnswer()
+	__standard_template_wd T fraction<T>::GetAnswer()
 	{
 		if (denominator == 0)
 		{
@@ -58,14 +61,14 @@ namespace Fraction
 		return numerator / denominator;
 	}
 
-	void fraction::Coup()
+	__standard_template_wd void fraction<T>::Coup()
 	{
 		double temp = denominator;
 		denominator = numerator;
 		numerator = temp;
 	}
-
-	void fraction::Simplify() {
+	
+	__standard_template_wd void fraction<T>::Simplify() {
 		double divisor = GCD(abs(numerator), abs(denominator));
 		numerator /= divisor;
 		denominator /= divisor;

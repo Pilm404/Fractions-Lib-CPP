@@ -12,9 +12,9 @@ int main()
 	f2.SetValues(10, 5);
 
 	//Copy values to new variable
-	Fraction::CopyValues(f2, f3);
+	Fraction::CopyValues<double>(f2, f3);
 
-	//Equalizing fractions
+	//Coup fractions
 	f3.Coup();
 
 	//Simplify a fraction
@@ -43,15 +43,18 @@ int main()
 	Fraction::Comparison::Max(f1, f2).PrintFraction(ALL);
 	Fraction::Comparison::Min(f1, f2).PrintFraction(ALL);
 	//or
-	Fraction::COMPARISONSTATUS status = Fraction::Comparison::Comparison(f1, f2);
+	COMPARISONSTATUS status = Fraction::Comparison::Comparison(f1, f2);
 	switch (status)
 	{
-	case Fraction::EQUALS:
+	case EQUALS:
 		std::cout << "EQUALS";
-	case Fraction::GREATER:
+		break;
+	case GREATER:
 		std::cout << "GREATER";
-	case Fraction::LESS:
+		break;
+	case LESS:
 		std::cout << "LESS";
+		break;
 	default:
 		break;
 	}

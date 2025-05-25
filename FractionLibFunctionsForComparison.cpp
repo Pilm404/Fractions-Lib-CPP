@@ -4,7 +4,7 @@ namespace Fraction
 {
 	namespace Comparison
 	{
-		COMPARISONSTATUS Comparison(fraction a, fraction b)
+		__standard_template_wd COMPARISONSTATUS Comparison(fraction<T> a, fraction<T> b)
 		{
 			a.Simplify();
 			b.Simplify();
@@ -20,7 +20,7 @@ namespace Fraction
 			return EQUALS;
 		}
 
-		fraction Max(fraction a, fraction b)
+		__standard_template_wd fraction<T> Max(fraction<T> a, fraction<T> b)
 		{
 			COMPARISONSTATUS result = Comparison(a, b);
 			switch (result)
@@ -35,7 +35,7 @@ namespace Fraction
 			return a;
 		}
 
-		fraction Min(fraction a, fraction b)
+		__standard_template_wd fraction<T> Min(fraction a<T>, fraction b<T>)
 		{
 			COMPARISONSTATUS result = Comparison(a, b);
 			switch (result)
