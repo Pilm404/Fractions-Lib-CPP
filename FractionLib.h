@@ -22,6 +22,7 @@ enum COMPARISONSTATUS
 };
 
 
+
 namespace Fraction
 {
 	double GCD(double, double);
